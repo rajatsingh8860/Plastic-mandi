@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/allOffers"
+        android:title="@string/all_offers"
+        android:enabled="true"
+        android:icon="@drawable/all_offers"/>
+    <item
+        android:id="@+id/myOffers"
+        android:title="@string/my_offers"
+        android:enabled="true"
+        android:icon="@drawable/my_offers"/>
+    <item
+        android:id="@+id/orderHistory"
+        android:title="@string/order_history"
+        android:enabled="true"
+        android:icon="@drawable/order_history"/>
+    <item
+        android:id="@+id/chat"
+        android:title="@string/chat"
+        android:enabled="true"
+        android:icon="@drawable/whatsapp_active_icon"/>
+</menu>

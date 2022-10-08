@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Plastic Mandi</string>
+
+    //Splash
+    <string name="plastic">Plastic</string>
+    <string name="mandi">Mandi</string>
+    <string name="platform_to_unite_all_the_players_in_plastic_Mandi">Platform to unite all the\nplayers in plastic Mandi.</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="copyright">© Copyright Plastic Mandi. All rights reserved.</string>
+
+    //Auth
+    <string name="welcome">Welcome!</string>
+    <string name="please_enter_your_mobile_number_to_continue">Please enter your mobile number to\ncontinue.</string>
+    <string name="enter_your_phone_number">Phone Number</string>
+    <string name="request_otp">REQUEST OTP</string>
+    <string name="enter_the_otp_received">Enter the OTP received</string>
+    <string name="enter_the_otp_sent_to_your_mobile">Enter the OTP sent to your mobile</string>
+    <string name="didnot_receive_an_otp">Didn’t receive an OTP?</string>
+    <string name="oops">OOPS!</string>
+    <string name="number_not_registered_desc">Your number is not registered with us.\nPlease call now for registration\n+91 9812345678</string>
+    <string name="get_in_touch">GET IN TOUCH</string>
+
+    //Dashboard
+    <string name="all_offers">All Offers</string>
+    <string name="my_offers">My Offers</string>
+    <string name="order_history">Order History</string>
+    <string name="chat">Chat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
