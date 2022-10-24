@@ -1,15 +1,14 @@
-package com.example.plasticmandi.`interface`
+package com.example.plasticmandi.api
 
-import com.example.plasticmandi.request.LoginRequest
-import com.example.plasticmandi.request.OtpRequest
-import com.example.plasticmandi.response.OtpResponse
-import retrofit2.Call
+import com.example.plasticmandi.model.request.LoginRequest
+import com.example.plasticmandi.model.request.OtpRequest
+import com.example.plasticmandi.model.response.OtpResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
 
-interface AuthInterface {
+interface AuthApi {
 
     @POST("app/auth/signin")
     @Headers("api-secret:pm@12345")

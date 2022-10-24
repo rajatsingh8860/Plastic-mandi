@@ -7,7 +7,8 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.plasticmandi.dashboard.DashboardActivity
+import com.example.plasticmandi.ui.auth.EnterPhoneActivity
+import com.example.plasticmandi.ui.dashboard.DashboardActivity
 
 
 class SplashActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
     private fun onGetStaredButtonClick() {
         val getStarted = findViewById<Button>(R.id.getStarted)
         getStarted.setOnClickListener {
-            val intent = Intent(this,DashboardActivity::class.java)
+            val intent = Intent(this, EnterPhoneActivity::class.java)
             startActivity(intent)
         }
     }

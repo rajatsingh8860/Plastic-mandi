@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PlasticMandi" >
         <activity
-            android:name=".dashboard.DashboardActivity"
+            android:name=".ui.dashboard.DashboardActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".EnterOtpActivity"
+            android:name=".ui.auth.EnterOtpActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" >
             <meta-data
@@ -27,7 +27,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".EnterPhoneActivity"
+            android:name=".ui.auth.EnterPhoneActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
@@ -38,9 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+
     </application>
 
 </manifest>

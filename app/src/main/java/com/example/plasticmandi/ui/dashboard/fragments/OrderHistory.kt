@@ -1,4 +1,4 @@
-package com.example.plasticmandi
+package com.example.plasticmandi.ui.dashboard.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

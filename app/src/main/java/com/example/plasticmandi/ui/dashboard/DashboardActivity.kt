@@ -1,13 +1,12 @@
-package com.example.plasticmandi.dashboard
+package com.example.plasticmandi.ui.dashboard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
-import com.example.plasticmandi.AllOffers
-import com.example.plasticmandi.MyOffers
-import com.example.plasticmandi.OrderHistory
 import com.example.plasticmandi.R
+import com.example.plasticmandi.ui.dashboard.fragments.AllOffers
+import com.example.plasticmandi.ui.dashboard.fragments.MyOffers
+import com.example.plasticmandi.ui.dashboard.fragments.OrderHistory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DashboardActivity : AppCompatActivity() {
@@ -33,7 +32,6 @@ class DashboardActivity : AppCompatActivity() {
 
             }
             true
-
         }
 
     }

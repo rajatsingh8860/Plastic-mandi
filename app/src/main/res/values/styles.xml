@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="lightBlueSemiBold38">
-<!--        <item name="android:textStyle">"600"</item>-->
+        <!--        <item name="android:textStyle">"600"</item>-->
         <item name="android:textColor">#038FEB</item>
         <item name="android:textSize">34sp</item>
     </style>
 
+    <style name="lightBlue25">
+        <item name="android:textColor">#038FEB</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
     <style name="DarkBlueSemiBold38">
-<!--        <item name="android:textStyle">"600"</item>-->
+        <!--        <item name="android:textStyle">"600"</item>-->
         <item name="android:textColor">#0143D9</item>
         <item name="android:textSize">34sp</item>
     </style>
@@ -15,6 +21,16 @@
     <style name="DarkBlue26">
         <item name="android:textColor">#0143D9</item>
         <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="DarkBlue25">
+        <item name="android:textColor">#0143D9</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="Grey20">
+        <item name="android:textColor">#001D65</item>
+        <item name="android:textSize">25sp</item>
     </style>
 
     <style name="DarkBlue30">
@@ -28,9 +44,25 @@
     </style>
 
     <style name="Grey18">
-      <item name="android:textColor">#001D65</item>
-      <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#001D65</item>
+        <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="BlueLight20">
+        <item name="android:textColor">#04B2F2</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="BlueDark12">
+        <item name="android:textColor">#001D65</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Grey16">
+        <item name="android:textColor">#001D65</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 
     <style name="LightBlue18">
         <item name="android:textColor">#04B8F3</item>
@@ -52,10 +84,7 @@
         <item name="android:textSize">10sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-
-
-
-
+    
 
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.plasticmandi
+package com.example.plasticmandi.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,9 +11,11 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.chaos.view.PinView
-import com.example.plasticmandi.`interface`.AuthInterface
-import com.example.plasticmandi.dashboard.DashboardActivity
-import com.example.plasticmandi.request.LoginRequest
+import com.example.plasticmandi.R
+import com.example.plasticmandi.RetrofitInstance
+import com.example.plasticmandi.api.AuthApi
+import com.example.plasticmandi.ui.dashboard.DashboardActivity
+import com.example.plasticmandi.model.request.LoginRequest
 import kotlinx.android.synthetic.main.activity_enter_otp.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -21,6 +23,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class EnterOtpActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enter_otp)
@@ -40,7 +45,7 @@ class EnterOtpActivity : AppCompatActivity() {
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if (p0?.length == 4) {
-                    login()
+                  //  login()
                 }
             }
 
@@ -78,30 +83,30 @@ class EnterOtpActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun login() {
-        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
-        val retrofit = RetrofitClient.getRetroInstance()
-        val apiInterface = retrofit.create(AuthInterface::class.java)
-        progressBar.visibility = View.VISIBLE
-        GlobalScope.launch {
-            try {
-                val response =
-                    apiInterface.login(LoginRequest("8860533811", pinView.text.toString().toInt()))
-                if (response.isSuccessful) {
-                    Log.e("Success", "Success")
-
-                    startActivity(
-                        Intent(this@EnterOtpActivity, DashboardActivity::class.java)
-                    )
-
-
-                }
-            } catch (Ex: Exception) {
-                Log.e("Error", Ex.localizedMessage)
-            }
-            withContext(Dispatchers.Main) {
-                progressBar.visibility = View.GONE
-            }
-        }
-    }
+//    fun login() {
+//        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+//        val retrofit = RetrofitInstance.getRetroInstance()
+//        val apiInterface = retrofit.create(AuthApi::class.java)
+//        progressBar.visibility = View.VISIBLE
+//        GlobalScope.launch {
+//            try {
+//                val response =
+//                    apiInterface.login(LoginRequest("8860533811", pinView.text.toString().toInt()))
+//                if (response.isSuccessful) {
+//                    Log.e("Success", "Success")
+//
+//                    startActivity(
+//                        Intent(this@EnterOtpActivity, DashboardActivity::class.java)
+//                    )
+//
+//
+//                }
+//            } catch (Ex: Exception) {
+//                Log.e("Error", Ex.localizedMessage)
+//            }
+//            withContext(Dispatchers.Main) {
+//                progressBar.visibility = View.GONE
+//            }
+//        }
+//    }
 }
