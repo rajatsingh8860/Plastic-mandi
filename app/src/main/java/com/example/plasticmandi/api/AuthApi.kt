@@ -3,6 +3,7 @@ package com.example.plasticmandi.api
 import com.example.plasticmandi.model.request.LoginRequest
 import com.example.plasticmandi.model.request.OtpRequest
 import com.example.plasticmandi.model.response.OtpResponse
+import com.example.plasticmandi.model.response.VerifyOtp.VerifyOtpResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Headers
@@ -16,6 +17,6 @@ interface AuthApi {
 
     @POST("app/auth/verify-otp")
     @Headers("api-secret:pm@12345")
-    suspend fun login(@Body params: LoginRequest) : Response<OtpResponse>
+    suspend fun login(@Body params: LoginRequest) : Response<VerifyOtpResponse>
 
 }

@@ -14,12 +14,16 @@ class AuthRepository(private val db: UserDatabase) {
         RetrofitInstance.authApi.sendOtp(otpRequest)
 
 
-    suspend fun login(loginRequest : LoginRequest){
+    suspend fun login(loginRequest : LoginRequest) =
         RetrofitInstance.authApi.login(loginRequest)
-    }
+
 
     suspend fun setUser(user : User){
         db.getUserDao().setUser(user)
+    }
+
+    suspend fun getUser(){
+        db.getUserDao().getUser()
     }
 
 }

@@ -3,15 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="10dp"
+   >
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="409dp"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="4dp"
+        app:cardCornerRadius="15dp"
+        app:strokeColor="@color/borderColor"
+        app:strokeWidth="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,19 +25,23 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="15dp"
-            android:paddingRight="10dp">
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            >
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:elevation="0dp"
                 app:cardBackgroundColor="@color/BlueOpacity15"
                 app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/offer_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -47,11 +54,11 @@
 
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/plastic_name"
                 style="@style/Grey20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="12dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="TextView"
@@ -61,13 +68,13 @@
                 tools:text="Homopolymer, Injection Molding" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/company_name"
                 style="@style/Grey16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="6dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14"
+                app:layout_constraintTop_toBottomOf="@+id/plastic_name"
                 tools:text="Reliance Industries Limited" />
 
             <TextView
@@ -77,17 +84,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="|"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
-                app:layout_constraintStart_toEndOf="@+id/textView16" />
+                app:layout_constraintBaseline_toBaselineOf="@+id/company_name"
+                app:layout_constraintStart_toEndOf="@+id/company_name" />
 
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/grade"
                 style="@style/Grey16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+                app:layout_constraintBaseline_toBaselineOf="@+id/company_name"
                 app:layout_constraintStart_toEndOf="@+id/textView17"
                 tools:text="1200MC" />
 
@@ -98,28 +105,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="|"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView19"
-                app:layout_constraintStart_toEndOf="@+id/textView19" />
+                app:layout_constraintBaseline_toBaselineOf="@+id/grade"
+                app:layout_constraintStart_toEndOf="@+id/grade" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/mfi"
                 style="@style/Grey16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView19"
+                app:layout_constraintBaseline_toBaselineOf="@+id/grade"
                 app:layout_constraintStart_toEndOf="@+id/textView20"
                 tools:text="20" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/price"
                 style="@style/BlueLight20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="15dp"
                 android:textFontWeight="700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                app:layout_constraintTop_toBottomOf="@+id/company_name"
                 tools:text="Rs. 110.00/KG" />
 
             <TextView
@@ -129,9 +136,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="+"
-                app:layout_constraintBottom_toBottomOf="@+id/textView22"
-                app:layout_constraintStart_toEndOf="@+id/textView22"
-                app:layout_constraintTop_toTopOf="@+id/textView22" />
+                app:layout_constraintBottom_toBottomOf="@+id/price"
+                app:layout_constraintStart_toEndOf="@+id/price"
+                app:layout_constraintTop_toTopOf="@+id/price" />
 
             <TextView
                 android:id="@+id/textView25"
@@ -145,46 +152,48 @@
                 app:layout_constraintStart_toEndOf="@+id/textView23" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buy_now_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"
+                android:minHeight="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/button_background"
                 android:paddingLeft="35dp"
-                android:paddingTop="10dp"
                 android:paddingRight="35dp"
-                android:paddingBottom="10dp"
+
                 android:text="Buy Now"
+                android:textSize="12sp"
                 android:textFontWeight="700"
                 app:backgroundTint="@null"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                app:layout_constraintTop_toBottomOf="@+id/textView25"
+                app:layout_constraintVertical_bias="0.0" />
 
-            <View
-                android:id="@+id/view"
-                android:layout_width="100dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="@id/button"
-                app:layout_constraintEnd_toStartOf="@+id/button"
-                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+            <!--            <View-->
+            <!--                android:id="@+id/view"-->
+            <!--                android:layout_width="100dp"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_marginTop="32dp"-->
+            <!--                android:layout_marginEnd="32dp"-->
+            <!--                android:layout_marginBottom="16dp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/button"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/button"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/price" />-->
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-24dp"
-                android:text="Button"
-                app:layout_constraintBottom_toBottomOf="@+id/view"
-                app:layout_constraintStart_toStartOf="@+id/view"
-                app:layout_constraintTop_toTopOf="@+id/view" />
+            <!--            <Button-->
+            <!--                android:id="@+id/button2"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="-24dp"-->
+            <!--                android:text="Button"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/view"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/view"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/view" />-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

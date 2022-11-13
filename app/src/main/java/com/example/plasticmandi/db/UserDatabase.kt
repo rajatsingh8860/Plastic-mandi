@@ -19,7 +19,7 @@ public abstract class UserDatabase : RoomDatabase() {
         private var INSTANCE: UserDatabase? = null
         private val LOCK = Any()
 
-        operator fun invoke(context: Context) = INSTANCE ?: synchronized(LOCK){
+        operator fun invoke(context : Context) = INSTANCE ?: synchronized(LOCK){
             INSTANCE ?: createDatabase(context).also { INSTANCE = it }
         }
 

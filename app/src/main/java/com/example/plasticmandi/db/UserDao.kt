@@ -5,7 +5,7 @@ import com.example.plasticmandi.model.User
 
 @Dao
 interface UserDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun setUser(user : User) : Long
 
     @Query("SELECT * FROM user")

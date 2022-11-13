@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splash">
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.example.plasticmandi.ui.splash.Splash"
+        android:label="Splash" >
+        <action
+            android:id="@+id/action_splash_to_enterPhone"
+            app:destination="@id/enterPhone" />
+        <action
+            android:id="@+id/action_splash_to_dashboard"
+            app:destination="@id/dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterPhone"
+        android:name="com.example.plasticmandi.ui.auth.EnterPhone"
+        android:label="EnterPhone" >
+        <action
+            android:id="@+id/action_enterPhone_to_enterOtp"
+            app:destination="@id/enterOtp" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterOtp"
+        android:name="com.example.plasticmandi.ui.auth.EnterOtp"
+        android:label="EnterOtp" >
+        <action
+            android:id="@+id/action_enterOtp_to_enterPhone"
+            app:destination="@id/enterPhone" />
+        <action
+            android:id="@+id/action_enterOtp_to_dashboard"
+            app:destination="@id/dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.example.plasticmandi.ui.dashboard.Dashboard"
+        android:label="Dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_profile"
+            app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_dashboard_to_allOffersView"
+            app:destination="@id/allOffersView" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.plasticmandi.ui.profile.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/allOffersView"
+        android:name="com.example.plasticmandi.ui.dashboard.fragments.alloffers.AllOffersView"
+        android:label="AllOffersView" />
+</navigation>

@@ -3,18 +3,21 @@ package com.example.plasticmandi.ui.auth
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import androidx.lifecycle.Observer
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.example.plasticmandi.R
-import com.example.plasticmandi.databinding.ActivityEnterPhoneBinding
+import com.example.plasticmandi.databinding.FragmentEnterPhoneBinding
 import com.example.plasticmandi.db.UserDatabase
 import com.example.plasticmandi.model.request.OtpRequest
 import com.example.plasticmandi.repository.AuthRepository
@@ -25,23 +28,29 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.number_not_found_bottomsheet.view.*
 import java.util.regex.Pattern
 
-class EnterPhoneActivity : AppCompatActivity() {
+class EnterPhone : Fragment(R.layout.fragment_enter_phone) {
 
-    lateinit var binding: ActivityEnterPhoneBinding
+    lateinit var binding: FragmentEnterPhoneBinding
     lateinit var viewModel: AuthViewModel
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val authRepository = AuthRepository(UserDatabase(this))
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val authRepository = AuthRepository(UserDatabase(this.requireContext()))
         val viewModelProviderFactory = AuthViewModelFactory(authRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(AuthViewModel::class.java)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_enter_phone)
+        binding = FragmentEnterPhoneBinding.inflate(inflater)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val inflater = layoutInflater
         val view = inflater.inflate(R.layout.number_not_found_bottomsheet, null, false)
-        view.setBackgroundResource(android.R.color.transparent)
 
 
         val animation = view.findViewById<LottieAnimationView>(R.id.callAnimation)
@@ -55,7 +64,7 @@ class EnterPhoneActivity : AppCompatActivity() {
         }
 
         binding.requestOtp.setOnClickListener {
-            onRequestOtpClicked(this)
+            onRequestOtpClicked(this.requireContext())
         }
 
 
@@ -75,16 +84,13 @@ class EnterPhoneActivity : AppCompatActivity() {
 
         })
 
-        viewModel.sendOtpResponse.observe(this, Observer { response ->
+        viewModel.sendOtpResponse.observe(viewLifecycleOwner, Observer { response ->
             when (response) {
                 is Resource.Success -> {
                     hideProgressBar()
                     response.data?.let {
 
-
-                        startActivity(
-                            Intent(this@EnterPhoneActivity, EnterOtpActivity::class.java)
-                        )
+                        findNavController().navigate(R.id.action_enterPhone_to_enterOtp)
 
                     }
 
@@ -92,7 +98,8 @@ class EnterPhoneActivity : AppCompatActivity() {
                 is Resource.Error -> {
                     hideProgressBar()
                     if (response.code == 422) {
-                        val bottomSheetDialog = BottomSheetDialog(this)
+                        binding.textInputLayout.error = "This number is not registered"
+                        val bottomSheetDialog = BottomSheetDialog(this.requireContext())
                         bottomSheetDialog.setContentView(view)
                         bottomSheetDialog.show()
 

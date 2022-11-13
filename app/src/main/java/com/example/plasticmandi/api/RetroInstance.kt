@@ -1,5 +1,6 @@
 package com.example.plasticmandi
 
+import com.example.plasticmandi.api.AllOfferApi
 import com.example.plasticmandi.api.AuthApi
 import com.example.plasticmandi.utils.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
@@ -26,6 +27,9 @@ class RetrofitInstance {
 
         val authApi by lazy {
             retrofit.create(AuthApi::class.java)
+        }
+        val allOfferApi by lazy {
+            retrofit.create(AllOfferApi::class.java)
         }
     }
 }

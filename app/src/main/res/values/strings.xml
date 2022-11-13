@@ -25,6 +25,20 @@
     <string name="my_offers">My Offers</string>
     <string name="order_history">Order History</string>
     <string name="chat">Chat</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+
+    //AllOffers
+    <string name="search_plastic_by_name">Search plastic by name</string>
+    <string-array name="plastics">
+        <item>PP Plastic</item>
+        <item>Pp</item>
+        <item>PpIOL</item>
+        <item>LLDPE</item>
+        <item>FG</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
