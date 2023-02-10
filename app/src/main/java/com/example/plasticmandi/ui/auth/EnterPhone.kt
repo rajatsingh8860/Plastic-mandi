@@ -1,6 +1,5 @@
 package com.example.plasticmandi.ui.auth
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -11,7 +10,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -37,7 +35,7 @@ class EnterPhone : Fragment(R.layout.fragment_enter_phone) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val authRepository = AuthRepository(UserDatabase(this.requireContext()))
         val viewModelProviderFactory = AuthViewModelFactory(authRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(AuthViewModel::class.java)
@@ -64,7 +62,7 @@ class EnterPhone : Fragment(R.layout.fragment_enter_phone) {
         }
 
         binding.requestOtp.setOnClickListener {
-            onRequestOtpClicked(this.requireContext())
+            onRequestOtpClicked()
         }
 
 
@@ -128,7 +126,7 @@ class EnterPhone : Fragment(R.layout.fragment_enter_phone) {
     }
 
 
-    private fun onRequestOtpClicked(context: Context) {
+    private fun onRequestOtpClicked() {
         binding.requestOtp.setOnClickListener {
 
             if (isValidMobile(binding.phoneNumber.text.toString())) {

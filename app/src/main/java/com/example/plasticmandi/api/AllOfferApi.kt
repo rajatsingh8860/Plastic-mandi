@@ -1,6 +1,4 @@
 package com.example.plasticmandi.api
-import com.example.plasticmandi.db.UserDao
-import com.example.plasticmandi.model.User
 import com.example.plasticmandi.model.response.AllOffers.AllOffersResponse
 import retrofit2.Response
 import retrofit2.http.GET

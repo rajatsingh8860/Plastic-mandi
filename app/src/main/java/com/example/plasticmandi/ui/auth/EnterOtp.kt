@@ -30,7 +30,7 @@ class EnterOtp : Fragment(R.layout.fragment_enter_otp) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val authRepository = AuthRepository(UserDatabase(this.requireContext()))
         val viewModelProviderFactory = AuthViewModelFactory(authRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(AuthViewModel::class.java)
